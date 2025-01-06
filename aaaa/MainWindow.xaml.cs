@@ -19,6 +19,28 @@ namespace aaaa
         public MainWindow()
         {
             InitializeComponent();
+            tbPass.Visibility = Visibility.Collapsed; // Hide TextBox
+        }
+
+        private void ReminderButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingReminder settingReminder = new SettingReminder();
+            settingReminder.Show();
+            this.Hide();
+        }
+
+        private void SHPassword_Checked(object sender, RoutedEventArgs e)
+        {
+            tbPass.Text = pwbox.Password; // Copy password to TextBox
+            pwbox.Visibility = Visibility.Collapsed; // Hide PasswordBox
+            tbPass.Visibility = Visibility.Visible; // Show TextBox
+        }
+
+        private void SHPassword_Unchecked(object sender, RoutedEventArgs e)
+        {
+            pwbox.Password = tbPass.Text; // Copy text back to PasswordBox
+            tbPass.Visibility = Visibility.Collapsed; // Hide TextBox
+            pwbox.Visibility = Visibility.Visible; // Show PasswordBox
         }
     }
 }

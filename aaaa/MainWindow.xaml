@@ -20,6 +20,20 @@
                 </Button>
                 <TextBlock Text="Settings" FontWeight="Bold" FontSize="25" Margin="20" />
             </StackPanel>
+
+            <Button Height="35" Background="Transparent" BorderThickness="0" Margin="0, 20, 0, 0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/edit.png"/>
+                    <TextBlock Text="Edit Profile" HorizontalAlignment="Center" FontSize="20"/>
+                </StackPanel>
+            </Button>
+
+            <Button Height="35" Background="Transparent" BorderThickness="0" Margin="0, 20, 0, 0" Click="ReminderButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/notif.png"/>
+                    <TextBlock Text="Reminders" HorizontalAlignment="Center" FontSize="20"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
         <!-- Edit Profile Form -->
@@ -45,8 +59,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="First Name" FontSize="15" Grid.Column="0" Margin="0,5,10,0" FontWeight="Bold"/>
-                <TextBlock Text="Last Name" FontSize="15"  Grid.Column="1" Margin="10,5,0,0" FontWeight="Bold"/>
+                <TextBlock Text="First Name" FontSize="15" Grid.Column="0" Margin="0,15,10,0" FontWeight="Bold"/>
+                <TextBlock Text="Last Name" FontSize="15"  Grid.Column="1" Margin="10,15,0,0" FontWeight="Bold"/>
             </Grid>
 
             <!-- Form Fields -->
@@ -55,18 +69,20 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0" Margin="0,0,10,0" Height="30"/>
-                <TextBox Grid.Column="1" Margin="10,0,0,0" Height="30"/>
+                <TextBox Grid.Column="0" Margin="0,0,10,0" Height="30" FontSize="20"/>
+                <TextBox Grid.Column="1" Margin="10,0,0,0" Height="30" FontSize="20"/>
             </Grid>
 
             <TextBlock Text="Address" FontSize="15" Margin="0,5, 0 ,0" FontWeight="Bold"/>
-            <TextBox Margin="0,0,0,10" Height="30"/>
+            <TextBox Margin="0,0,0,10" Height="30" FontSize="20"/>
 
             <TextBlock Text="Contact Number" FontSize="15" Margin="0,5, 0 ,0" FontWeight="Bold"/>
-            <TextBox Margin="0,0,0,10" Height="30"/>
+            <TextBox Margin="0,0,0,10" Height="30" FontSize="20"/>
 
             <TextBlock Text="Password" FontSize="15" Margin="0,5, 0 ,0" FontWeight="Bold"/>
-            <TextBox Margin="0,0,0,20" Height="30"/>
+            <TextBox x:Name="tbPass" Margin="0,0,0,0" Height="30" FontSize="20"/>
+            <PasswordBox x:Name="pwbox" Margin="0,0,0,0" Height="30" FontSize="20"/>
+            <CheckBox x:Name="SHPassword" Content="Show Password" Margin="0,5,0,20" Checked="SHPassword_Checked" Unchecked="SHPassword_Unchecked"/>
 
             <!-- Buttons -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
